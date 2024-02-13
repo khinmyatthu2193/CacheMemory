@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Presentation</title>
+  <style>
+    body {
+      
+      background-color: #adb3d6;
+    }
+
+    .slide {
+      display: none;
+      animation-duration: 3s;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    
+
+    .fade-in {
+      animation-name: fadeIn;
+    }
+
+    .fade-out {
+      animation-name: fadeOut;
+    }
+
+    .zoom-in {
+      animation-name: zoomIn;
+    }
+
+    .zoom-out {
+      animation-name: zoomOut;
+    }
+      .fa-forward {
+        font-size: 30px;
+        right: 5px;
+        position: absolute;
+      }
+      .fa-forward:hover {
+        color: red;
+      }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+
+    @keyframes zoomIn {
+      from { transform: translate(-50%, -50%) scale(0); }
+      to { transform: translate(-50%, -50%) scale(1); }
+    }
+
+    @keyframes zoomOut {
+      from { transform: translate(-50%, -50%) scale(1); }
+      to { transform: translate(-50%, -50%) scale(0); }
+    }
+    #slide1{
+      margin-left: 10%;
+    }
+    .ii{
+        font-size: 30px;
+        font-weight: bold;
+    }
+    span{
+        font-size: 30px;
+    }
+    img{
+        margin-left: 10%;
+    }
+  </style>
+</head>
+<body>
+    <p style="font-size: 40px; text-align: center; text-decoration: underline;">"Types of Cache Memory"</p>
+  <div>
+    <span class="ii">L1 Cache:</span>&nbsp;&nbsp;<span>Located on the CPU chip, it is the fastest but has a smaller capacity.</span><br><br>
+    <span class="ii">L2 Cache:</span>&nbsp;&nbsp;<span>Situated between the L1 cache and RAM, it has a larger capacity and slightly slower speed.</span><br><br>
+    <span class="ii">L3 Cache:</span>&nbsp;&nbsp;<span>Shared among multiple CPU cores, providing a larger but slower cache.</span><br><br>
+    <img src="pic/c5.jfif" width="80%" height="-50%">
+    
+</div><br>
+<a onclick="nextSlide()" href="page10.html">
+    <i class="fa-solid fa-forward"></i>
+</a><source>
+</div>
+
+
+
+
+<script>
+  let currentSlide = 1;
+
+  function showSlide(slideNumber, animation) {
+    const slides = document.querySelectorAll('.slide');
+    slides.forEach(slide => {
+      slide.style.display = 'none';
+      slide.classList.remove('fade-in', 'fade-out', 'zoom-in', 'zoom-out');
+    });
+
+    const currentSlideElement = document.getElementById(`slide${slideNumber}`);
+    currentSlideElement.style.display = 'block';
+    currentSlideElement.classList.add(animation);
+  }
+
+  function nextSlide() {
+    currentSlide++;
+    if (currentSlide > document.querySelectorAll('.slide').length) {
+      currentSlide = 1;
+    }
+    showSlide(currentSlide, 'fade-in');
+  }
+
+  function prevSlide() {
+    currentSlide--;
+    if (currentSlide < 1) {
+      currentSlide = document.querySelectorAll('.slide').length;
+    }
+    showSlide(currentSlide, 'zoom-out');
+  }
+
+  // Show the first slide initially
+  showSlide(currentSlide, 'fade-in');
+</script>
+
+</body>
+</html>

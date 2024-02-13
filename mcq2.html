@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Single Choice Question</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #d09d9d;
+      }
+      #result {
+        font-weight: bold;
+      }
+      #question{
+        font-size: 30px;
+        font-weight: bold;
+      }
+      label{
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+
+      .pagination {
+        display: flex;
+        justify-content: center;
+        left: 0;
+        right: 0;
+        bottom: 10px;
+        margin: auto;
+        position: absolute;
+      }
+
+      .page-link {
+        display: inline-block;
+        padding: 10px 15px;
+        margin: 0 5px;
+        text-decoration: none;
+        color: #333;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      .page-link:hover {
+        background-color: #4dd16e;
+      }
+
+      .page-link:active {
+        background-color: #0a4282;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Question-2</h1>
+    <div id="question-container">
+      <p id="question"> How many possibilities of mapping does a direct mapped cache have?</p>
+      <input type="radio" name="answer" value="1" id="option1" /><label
+        for="option1">1</label><br>
+      <input type="radio" name="answer" value="2" id="option2" /><label
+        for="option2">2</label><br>
+      <input type="radio" name="answer" value="3" id="option3" /><label
+        for="option3">3</label><br>
+      <input type="radio" name="answer" value="4" id="option4" /><label
+        for="option4">4
+      </label>
+    </div>
+    <br>
+    <button onclick="submitAnswer()">Submit</button><br><br>
+    <div id="result"></div>
+
+    <script>
+      const correctAnswer = "1";
+      const resultDiv = document.getElementById("result");
+      
+      function submitAnswer() {
+        const selectedOption = document.querySelector('input[name="answer"]:checked');
+      
+        if (selectedOption) {
+          const userAnswer = selectedOption.value;
+          if (userAnswer === correctAnswer) {
+            resultDiv.textContent = "Correct! :) Congratulation!! ";
+          } else {
+            resultDiv.textContent = "Wrong. :') The correct answer is " + correctAnswer + "."+" We hope you can choose correct answer in real exam.";
+          }
+        } else {
+          resultDiv.textContent = "Please select an answer.";
+        }
+      }
+      </script>
+      
+      <div class="pagination">
+        <a href="banner.html" class="page-link">&laquo; Prev</a>
+        <a href="mcq1.html" class="page-link" target="f2">1</a>
+        <a href="mcq2.html" class="page-link" targe="f2">2</a>
+        <a href="mcq3.html" class="page-link" target="f2">3</a>
+        <a href="page13.html" class="page-link" target="_top">Next &raquo;</a>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <title>Dice Game</title>
+    <style>
+      h1 {
+        font-size: 50px;
+        background: rgb(103, 216, 77);
+        text-align: center;
+      }
+      body{
+        background-color: #ABF3C0;
+      }
+      p{
+        font-size: 30px;
+      }
+      span{
+        font-size: 100px;
+        height: 100px;
+      }
+      div{
+        float: right;
+        position: absolute;
+        top: 50%;
+        right: 50px;   
+      }
+      a{
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Quiz Time</h1>
+    <p>The luckiest one is<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span>2021-MIIT-CSE-</span><img
+        src="pic/200.gif"
+        width="350"
+        height="220"
+        align="center"
+        id="insert"
+      /></p>
+      <div>
+        <button><a href="randomGnenerator.html">Start</a></button><br><br>
+        <button
+        type="submit"
+        name="change"
+        onclick="throw_img();">Stop</button>
+      </div>
+      
+
+    <script type="text/javascript">
+      function throw_img() {
+        var myImages = [
+          "pic/1.jpg",
+          "pic/3.jpg",
+          "pic/4.jpg",
+          "pic/5.jpg",
+          "pic/6.jpg",
+          "pic/8.jpg",
+          "pic/9.jpg",
+          "pic/10.jpg",       
+          "pic/12.jpg",
+          "pic/13.jpg",
+          "pic/14.jpg",
+          "pic/16.jpg",
+          "pic/17.jpg",
+          "pic/18.jpg",
+          "pic/19.jpg",
+          "pic/21.jpg",
+          "pic/22.jpg",
+          "pic/24.jpg",
+          "pic/25.jpg",
+          "pic/26.jpg",
+          "pic/27.jpg",
+          "pic/28.jpg",
+          "pic/32.jpg",
+          "pic/33.jpg",
+          "pic/34.jpg",
+          "pic/35.jpg",
+          "pic/36.jpg",
+          "pic/37.jpg",
+          "pic/38.jpg",
+          "pic/40.jpg",
+          "pic/41.jpg",
+          "pic/42.jpg",
+          "pic/43.jpg",
+          "pic/44.jpg",
+          "pic/45.jpg",
+          "pic/46.jpg",
+          "pic/47.jpg",
+          "pic/48.jpg",
+        ];
+        var random = getRandomNumber(0, myImages.length);
+        document.images[0].src = myImages[random];
+      }
+      function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * max) + min;
+      }
+    </script>
+  </body>
+</html>
